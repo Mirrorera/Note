@@ -19,10 +19,9 @@ struct BigInt
         data[0] = n;
         size = 1;
     }
-}
+};
 
-inline int
-mmax(const int &a, const int &b)
+inline int mmax(const int &a, const int &b)
 {
     return a > b ? a : b;
 }
@@ -34,10 +33,10 @@ BigInt operator+(const BigInt &lhs, const BigInt &rhs)
         ans.data[i] = lhs.data[i] + rhs.data[i];
     for (int i = 0; i < ans.size; ++i)
     {
-        ans.data[i + 1] += ans.data[i] / 10;
+        ans.data[i + 1] += ans.data[i] / 10;ing
         ans.data[i] %= 10;
     }
-    while(ans.data[ans.size + 1])
+    while (ans.data[ans.size + 1])
     {
         ++ans.size;
         ans.data[ans.size + 1] += ans.data[ans.size] / 10;
@@ -47,13 +46,12 @@ BigInt operator+(const BigInt &lhs, const BigInt &rhs)
 }
 BigInt ANS, ADD;
 //int FACTOR = 2013;
-BigInt FACTOR = BigInt(2013)
+BigInt FACTOR = BigInt(2013);
 
 int main()
 {
-
-    for (int i = 0;;++i)
+    for (int i = 0;; ++i)
     {
-        
+
     }
 }
