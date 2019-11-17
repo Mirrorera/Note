@@ -61,21 +61,28 @@ func main() {
 		fmt.Scanln()
 	}
 	dfs(0, 0)
-	/*for _, x := range dp {
-		fmt.Println(x)
-	}
-	for _, x := range ans {
-		fmt.Println(x)
-	}*/
-	/*for _, x := range ans {
-		fmt.Println(string(x[0:len(x)]))
-	}*/
+	/*
+		for _, x := range dp {
+			fmt.Println(x)
+		}
+		for _, x := range ans {
+			fmt.Println(x)
+		}
+		for _, x := range ans {
+			fmt.Println(string(x[0:len(x)]))
+		}
+	*/
 	r, c := 0, 0
 	var sans string
-	for r <= N && c <= M {
+	for r < N && c < M {
+		//fmt.Println(r, c)
+		//fmt.Printf("%c\n", dir[ans[r][c]])
 		sans += fmt.Sprintf("%c", dir[ans[r][c]])
-		r += incr[ans[r][c]]
-		c += incc[ans[r][c]]
+		//直接r+= incr c+=incc 会导致c所加的值不是原处的方向
+		nr := r + incr[ans[r][c]]
+		nc := c + incc[ans[r][c]]
+		r = nr
+		c = nc
 		if r == N-1 && c == M-1 {
 			break
 		}
